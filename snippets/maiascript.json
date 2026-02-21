@@ -1,0 +1,87 @@
+{
+  "Namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${1:name} {",
+      "\t${2}",
+      "}"
+    ],
+    "description": "Create a namespace"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create a function"
+  },
+  "Async Function": {
+    "prefix": "async",
+    "body": [
+      "async ${1:name}(${2:params}) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create an async function"
+  },
+  "Kernel Function": {
+    "prefix": "kernel",
+    "body": [
+      "kernel ${1:name}(${2:params}) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create a kernel function"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t${2}",
+      "}"
+    ],
+    "description": "Create an if statement"
+  },
+  "If Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "\t${2}",
+      "} else {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create an if-else statement"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (${1:i} = 0; ${1:i} < ${2:limit}; ${1:i} = ${1:i} + 1) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create a for loop"
+  },
+  "Foreach Loop": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (${1:item} in ${2:array}) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create a foreach loop"
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1}",
+      "} catch (${2:err}) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create a try-catch block"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "vscode-maiascript",
+  "displayName": "MaiaScript Language Support",
+  "description": "MaiaScript language support for Visual Studio Code",
+  "version": "0.1.0",
+  "publisher": "seu-nome",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "maiascript",
+        "aliases": ["MaiaScript", "maiascript"],
+        "extensions": [".maia", ".maiascript"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "maiascript",
+        "scopeName": "source.maiascript",
+        "path": "./syntaxes/maiascript.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "MaiaScript Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/maia-color-theme.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "maiascript",
+        "path": "./snippets/maiascript.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "vsce package",
+    "install": "code --install-extension vscode-maiascript-0.1.0.vsix"
+  }
+}
