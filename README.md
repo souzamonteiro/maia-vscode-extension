@@ -5,7 +5,7 @@ Claro! Aqui está um README.md completo e profissional para a extensão:
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=yourname.vscode-maiascript)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-![MaiaScript Logo](images/maiascript-128x128.png)
+![MaiaScript Logo](https://raw.githubusercontent.com/souzamonteiro/maia-vscode-extension/images/maiascript-128x128.png)
 
 **MaiaScript Language Support** provides comprehensive syntax highlighting, code snippets, and theme support for the MaiaScript programming language in Visual Studio Code.
 
