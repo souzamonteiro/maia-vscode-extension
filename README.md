@@ -5,7 +5,7 @@ Claro! Aqui está um README.md completo e profissional para a extensão:
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=yourname.vscode-maiascript)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-![MaiaScript Logo](https://raw.githubusercontent.com/yourusername/vscode-maiascript/main/icons/maiascript-logo.png)
+![MaiaScript Logo](images/maiascript.png)
 
 **MaiaScript Language Support** provides comprehensive syntax highlighting, code snippets, and theme support for the MaiaScript programming language in Visual Studio Code.
 
@@ -56,7 +56,7 @@ Productivity-enhancing snippets for common MaiaScript patterns:
 ## 📥 **Installation**
 
 ### **From VSIX File**
-1. Download the latest `.vsix` file from the [releases page](https://github.com/yourusername/vscode-maiascript/releases)
+1. Download the latest `.vsix` file from the [releases page](https://github.com/souzamonteiro/maia-vscode-extension/releases)
 2. Open VS Code
 3. Press `Ctrl+Shift+P` to open the command palette
 4. Type "Install from VSIX" and select the downloaded file
@@ -111,7 +111,7 @@ namespace example {
 
 ## 🎨 **Theme Preview**
 
-![MaiaScript Theme Preview](https://raw.githubusercontent.com/yourusername/vscode-maiascript/main/images/theme-preview.png)
+![MaiaScript Theme Preview](https://raw.githubusercontent.com/souzamonteiro/maia-vscode-extension/main/images/theme-preview.png)
 
 The custom theme is automatically activated when opening `.maia` files. You can also manually select it:
 1. Press `Ctrl+K Ctrl+T`
@@ -141,10 +141,10 @@ The extension works out of the box, but you can customize it through VS Code set
 ## 📦 **Extension Structure**
 
 ```
-vscode-maiascript/
+maia-vscode-extension/
 ├── .vscode/
 │   └── launch.json          # Debug configuration
-├── icons/
+├── images/
 │   ├── maiascript-dark.png  # Dark theme icon
 │   └── maiascript-light.png # Light theme icon
 ├── snippets/
@@ -224,9 +224,9 @@ limitations under the License.
 
 ## 📞 **Support**
 
-- **Documentation**: [MaiaScript Official Docs](https://maiascript.com)
+- **Documentation**: [MaiaScript Official Docs](https://www.maiascript.com)
 - **Issues**: [GitHub Issues](https://github.com/souzamonteiro/maia-vscode-extension/issues)
-- **Email**: your-email@example.com
+- **Email**: roberto@souzamonteiro.com
 
 ---
 
