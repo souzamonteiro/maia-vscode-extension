@@ -16,7 +16,15 @@
   "tokenColors": [
     {
       "name": "Comments",
-      "scope": ["comment", "comment.line.double-slash"],
+      "scope": [
+        "comment",
+        "comment.line.double-slash",
+        "comment.line.double-slash.maia",
+        "comment.line.number-sign.maia",
+        "comment.line.documentation.maia",
+        "comment.line.shebang.maia",
+        "comment.block.maia"
+      ],
       "settings": {
         "foreground": "#6a9955",
         "fontStyle": "italic"
@@ -24,7 +32,12 @@
     },
     {
       "name": "Strings",
-      "scope": "string.quoted.double",
+      "scope": [
+        "string",
+        "string.quoted.double",
+        "string.quoted.double.maia",
+        "string.quoted.single.maia"
+      ],
       "settings": {
         "foreground": "#ce9178"
       }
@@ -38,7 +51,7 @@
     },
     {
       "name": "Keywords - Control Flow",
-      "scope": "keyword.control",
+      "scope": ["keyword.control", "keyword.control.maia"],
       "settings": {
         "foreground": "#c586c0",
         "fontStyle": "bold"
@@ -46,7 +59,7 @@
     },
     {
       "name": "Keywords - Declaration",
-      "scope": "keyword.declaration",
+      "scope": ["keyword.declaration", "keyword.declaration.maia"],
       "settings": {
         "foreground": "#569cd6",
         "fontStyle": "bold"
@@ -54,7 +67,7 @@
     },
     {
       "name": "Keywords - Types",
-      "scope": "keyword.type",
+      "scope": ["keyword.type", "keyword.type.maia"],
       "settings": {
         "foreground": "#4ec9b0",
         "fontStyle": "bold"
@@ -62,7 +75,7 @@
     },
     {
       "name": "Keywords - Other",
-      "scope": "keyword.other",
+      "scope": ["keyword.other", "keyword.other.maia"],
       "settings": {
         "foreground": "#9cdcfe"
       }
@@ -125,7 +138,7 @@
     },
     {
       "name": "Namespace name",
-      "scope": "entity.name.type.namespace",
+      "scope": ["entity.name.type.namespace", "entity.name.type.namespace.maia"],
       "settings": {
         "foreground": "#4ec9b0",
         "fontStyle": "bold underline"
@@ -133,23 +146,15 @@
     },
     {
       "name": "Function name",
-      "scope": "entity.name.function",
+      "scope": ["entity.name.function", "entity.name.function.maia"],
       "settings": {
         "foreground": "#dcdcaa",
         "fontStyle": "bold"
       }
     },
     {
-      "name": "Async modifier",
-      "scope": "keyword.declaration.maia:has(\\basync\\b)",
-      "settings": {
-        "foreground": "#c586c0",
-        "fontStyle": "bold italic"
-      }
-    },
-    {
       "name": "Variables",
-      "scope": "variable.other",
+      "scope": ["variable.other", "variable.other.maia"],
       "settings": {
         "foreground": "#9cdcfe"
       }

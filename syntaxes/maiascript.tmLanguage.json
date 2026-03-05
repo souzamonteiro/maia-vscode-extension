@@ -5,6 +5,9 @@
   "fileTypes": ["maia", "maiascript"],
   "patterns": [
     {
+      "include": "#meta"
+    },
+    {
       "include": "#comments"
     },
     {
@@ -12,6 +15,9 @@
     },
     {
       "include": "#numbers"
+    },
+    {
+      "include": "#declarations"
     },
     {
       "include": "#keywords"
@@ -23,18 +29,32 @@
       "include": "#brackets"
     },
     {
-      "include": "#namespace"
-    },
-    {
-      "include": "#functions"
-    },
-    {
       "include": "#variables"
     }
   ],
   "repository": {
+    "meta": {
+      "patterns": [
+        {
+          "name": "comment.line.shebang.maia",
+          "match": "^#!.*$"
+        }
+      ]
+    },
     "comments": {
       "patterns": [
+        {
+          "name": "comment.line.documentation.maia",
+          "match": "///.*$"
+        },
+        {
+          "name": "comment.line.number-sign.maia",
+          "match": "##.*$"
+        },
+        {
+          "name": "comment.line.number-sign.maia",
+          "match": "#.*$"
+        },
         {
           "name": "comment.line.double-slash.maia",
           "match": "//.*$"
@@ -47,19 +67,65 @@
       ]
     },
     "strings": {
-      "name": "string.quoted.double.maia",
-      "begin": "\"",
-      "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.maia",
-          "match": "\\\\."
+          "name": "string.quoted.double.maia",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.maia",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.maia",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.maia",
+              "match": "\\\\."
+            }
+          ]
         }
       ]
     },
     "numbers": {
       "name": "constant.numeric.maia",
       "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b"
+    },
+    "declarations": {
+      "patterns": [
+        {
+          "name": "meta.declaration.namespace.maia",
+          "match": "\\b(namespace|object)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.maia"
+            },
+            "2": {
+              "name": "entity.name.type.namespace.maia"
+            }
+          }
+        },
+        {
+          "name": "meta.declaration.function.maia",
+          "match": "\\b(async\\s+)?(function|kernel|constructor)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "storage.modifier.async.maia"
+            },
+            "2": {
+              "name": "keyword.declaration.maia"
+            },
+            "3": {
+              "name": "entity.name.function.maia"
+            }
+          }
+        }
+      ]
     },
     "operators": {
       "patterns": [
@@ -69,7 +135,7 @@
         },
         {
           "name": "keyword.operator.arithmetic.maia",
-          "match": "(\\+\\+)|(--)|(\\+)|(-)|(\\*)|(/)|(%)|(\\^)"
+          "match": "(\\+\\+)|(--)|(\\+)|(-)|(\\*)|(/)|(%)|(\\^)|(`)"
         },
         {
           "name": "keyword.operator.logical.maia",
@@ -105,7 +171,7 @@
       "patterns": [
         {
           "name": "keyword.control.maia",
-          "match": "\\b(break|continue|do|else|for|foreach|if|return|switch|while|try|catch|throw|test)\\b"
+          "match": "\\b(break|continue|do|else|elseif|for|foreach|if|return|switch|while|try|catch|throw|test)\\b"
         },
         {
           "name": "keyword.declaration.maia",
@@ -121,55 +187,6 @@
         }
       ]
     },
-    "namespace": {
-      "begin": "\\b(namespace|object)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.declaration.maia"
-        },
-        "2": {
-          "name": "entity.name.type.namespace.maia"
-        }
-      },
-      "end": "(?<=\\})",
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#strings"
-        },
-        {
-          "include": "#numbers"
-        }
-      ]
-    },
-    "functions": {
-      "begin": "\\b(async\\s+)?(function|kernel|constructor)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.declaration.maia"
-        },
-        "2": {
-          "name": "keyword.declaration.maia"
-        },
-        "3": {
-          "name": "entity.name.function.maia"
-        }
-      },
-      "end": "\\)",
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#strings"
-        },
-        {
-          "include": "#numbers"
-        }
-      ]
-    },
     "variables": {
       "patterns": [
         {
@@ -177,8 +194,15 @@
           "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*[=;,)])"
         },
         {
-          "name": "variable.other.maia",
-          "match": "(?<=\\.)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+          "match": "(\\.)([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "punctuation.accessor.maia"
+            },
+            "2": {
+              "name": "variable.other.maia"
+            }
+          }
         }
       ]
     }
