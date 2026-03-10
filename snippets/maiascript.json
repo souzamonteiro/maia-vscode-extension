@@ -17,6 +17,15 @@
     ],
     "description": "Create a function"
   },
+  "Plain Function": {
+    "prefix": "plain",
+    "body": [
+      "plain ${1:name}(${2:params}) {",
+      "\t${3}",
+      "}"
+    ],
+    "description": "Create a plain function"
+  },
   "Async Function": {
     "prefix": "async",
     "body": [
@@ -25,15 +34,6 @@
       "}"
     ],
     "description": "Create an async function"
-  },
-  "Kernel Function": {
-    "prefix": "kernel",
-    "body": [
-      "kernel ${1:name}(${2:params}) {",
-      "\t${3}",
-      "}"
-    ],
-    "description": "Create a kernel function"
   },
   "If Statement": {
     "prefix": "if",
@@ -67,11 +67,36 @@
   "Foreach Loop": {
     "prefix": "foreach",
     "body": [
-      "foreach (${1:item} in ${2:array}) {",
-      "\t${3}",
+      "foreach (${1:collection}; ${2:key}; ${3:value}) {",
+      "\t${4}",
       "}"
     ],
     "description": "Create a foreach loop"
+  },
+  "Global Declaration": {
+    "prefix": "global",
+    "body": [
+      "global ${1:expression}"
+    ],
+    "description": "Create a global declaration"
+  },
+  "Local Declaration": {
+    "prefix": "local",
+    "body": [
+      "local ${1:expression}"
+    ],
+    "description": "Create a local declaration"
+  },
+  "Test Block": {
+    "prefix": "test",
+    "body": [
+      "test (${1:setup}; ${2:condition}; ${3:teardown}) {",
+      "\t${4}",
+      "} catch (${5:error}) {",
+      "\t${6}",
+      "}"
+    ],
+    "description": "Create a test block"
   },
   "Try Catch": {
     "prefix": "try",

@@ -2,7 +2,7 @@
   "name": "vscode-maiascript",
   "displayName": "MaiaScript Language Support",
   "description": "MaiaScript language support for Visual Studio Code",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "souzamonteiro",
   "engines": {
     "vscode": "^1.60.0"
@@ -43,7 +43,7 @@
   },
   "scripts": {
     "build": "vsce package",
-    "install": "code --install-extension vscode-maiascript-0.1.0.vsix"
+    "install": "code --install-extension vscode-maiascript-0.2.0.vsix"
   },
   "keywords": [
         "maia",
